@@ -49,7 +49,7 @@ main:has(.back-link) {
   background-color: #f5f5f5;
 }
 
-/* Стиль для елементів форми */
+
 .form label {
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@ main:has(.back-link) {
   color: #333;
 }
 
-/* Інпут пошуку */
+
 .form input[type="text"] {
   padding: 10px;
   margin-top: 5px;
@@ -71,13 +71,13 @@ main:has(.back-link) {
   box-sizing: border-box;
 }
 
-/* Інтерактивність для інпуту */
+
 .form input[type="text"]:focus {
   border-color: #007bff;
   outline: none;
 }
 
-/* Кнопка пошуку */
+
 .form button {
   padding: 10px 20px;
   font-size: 16px;
@@ -89,12 +89,12 @@ main:has(.back-link) {
   transition: background-color 0.3s ease;
 }
 
-/* Ховер для кнопки */
+
 .form button:hover {
   background-color: #0056b3;
 }
 
-/* Стили для UL */
+
 ul.gallery {
   display: flex;
   flex-wrap: wrap;
@@ -107,7 +107,7 @@ ul.gallery {
 /* Стили для LI */
 li.gallery-item {
   flex-basis: calc(33.3333% - 20px);
-  /* три елементи в рядок */
+
   border: 1px solid #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
@@ -118,7 +118,7 @@ li.gallery-item:hover {
   transform: scale(1.05);
 }
 
-/* Стили для ссылок и изображений */
+
 .gallery-link {
   display: block;
   text-decoration: none;
@@ -131,7 +131,7 @@ li.gallery-item:hover {
   object-fit: cover;
 }
 
-/* Стили для блока информации */
+
 .info {
   padding: 10px;
   background-color: #f9f9f9;
