@@ -93,3 +93,57 @@ main:has(.back-link) {
 .form button:hover {
   background-color: #0056b3;
 }
+
+/* Стили для UL */
+ul.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Стили для LI */
+li.gallery-item {
+  flex-basis: calc(33.3333% - 20px);
+  /* три елементи в рядок */
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+li.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* Стили для ссылок и изображений */
+.gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Стили для блока информации */
+.info {
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.info-item span {
+  font-weight: bold;
+}
