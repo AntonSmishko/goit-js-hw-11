@@ -13,6 +13,7 @@ import { photoMarkup } from './js/render-functions';
 
 const linkEl = {
   form: document.querySelector('.form'),
+  loader: document.querySelector('.loader'),
 };
 
 linkEl.form.addEventListener('submit', formHandler);
@@ -28,6 +29,7 @@ function formHandler(e) {
     });
     return;
   }
+  e.target.elements['search-area'].value = '';
 
   fetchImages(query)
     .then(data => {
@@ -43,6 +45,10 @@ function formHandler(e) {
       photoMarkup(data);
       gallery.refresh();
     })
-    .catch()
-    .finally();
+    .catch(error => {
+      iziToast.error({
+        position: 'topRight',
+        message: error,
+      });
+    });
 }
