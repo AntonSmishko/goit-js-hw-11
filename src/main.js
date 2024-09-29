@@ -11,15 +11,17 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { fetchImages } from './js/pixabay-api';
 import { photoMarkup } from './js/render-functions';
 
-const linkEl = {
+export const linkEl = {
   form: document.querySelector('.form'),
   loader: document.querySelector('.loader'),
+  list: document.querySelector('.gallery'),
 };
 
 linkEl.form.addEventListener('submit', formHandler);
 let gallery = new SimpleLightbox('.gallery a');
 function formHandler(e) {
   e.preventDefault();
+  linkEl.list.innerHTML = '';
   const query =
     e.target.elements['search-area'].value.trim();
   if (query === '') {
@@ -34,6 +36,7 @@ function formHandler(e) {
   fetchImages(query)
     .then(data => {
       if (data.length === 0) {
+        linkEl.list.innerHTML = '';
         iziToast.error({
           position: 'topRight',
           message:
@@ -46,6 +49,7 @@ function formHandler(e) {
       gallery.refresh();
     })
     .catch(error => {
+      linkEl.list.innerHTML = '';
       iziToast.error({
         position: 'topRight',
         message: error,

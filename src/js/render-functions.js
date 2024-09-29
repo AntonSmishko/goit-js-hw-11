@@ -1,6 +1,11 @@
+import { linkEl } from '../main';
+const listEl = document.querySelector('.gallery');
 export function photoMarkup(data) {
-  const gallery = document.querySelector('.gallery');
-  gallery.innerHTML = data
+  if (data.length === 0) {
+    linkEl.list.innerHTML = '';
+    return;
+  }
+  linkEl.list.innerHTML = data
     .map(
       ({
         webformatURL,
