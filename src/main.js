@@ -32,9 +32,10 @@ function formHandler(e) {
     return;
   }
   e.target.elements['search-area'].value = '';
-
+  linkEl.loader.classList.add('active');
   fetchImages(query)
     .then(data => {
+      linkEl.loader.classList.remove('active');
       if (data.length === 0) {
         linkEl.list.innerHTML = '';
         iziToast.error({
@@ -49,6 +50,7 @@ function formHandler(e) {
       gallery.refresh();
     })
     .catch(error => {
+      linkEl.loader.classList.remove('active');
       linkEl.list.innerHTML = '';
       iziToast.error({
         position: 'topRight',
